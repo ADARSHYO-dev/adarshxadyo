@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ADARSH JAISWAL | Anime Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+
+    /* ===== BODY ===== */
+    body{
+      font-family:Arial, sans-serif;
+      color:#fff;
+      background:#000;
+      overflow-x:hidden;
+    }
+
+    /* ===== PARTICLE BACKGROUND ===== */
+    #bgCanvas{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+    }
+
+    /* ===== NAV ===== */
+    nav{
+      position:fixed;
+      top:0;width:100%;
+      padding:15px;
+      background:rgba(0,0,0,.85);
+      text-align:center;
+      z-index:100;
+      box-shadow:0 0 20px rgba(0,255,204,.4);
+    }
+    nav a{
+      color:#00ffcc;
+      margin:0 15px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    nav a:hover{
+      text-shadow:0 0 10px #00ffcc;
+    }
+
+    /* ===== HOME ===== */
+    #home{
+      min-height:100vh;
+      padding-top:120px;
+      text-align:center;
+    }
+
+    /* ===== HERO ===== */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:25px;
+    }
+
+    .naruto{
+      width:260px;
+      animation:floatImg 4s ease-in-out infinite;
+      filter:drop-shadow(0 0 30px #00ffcc);
+    }
+
+    /* ===== NAME ANIMATION ===== */
+    .name-animate{
+      font-size:40px;
+      font-weight:900;
+      color:#00ffcc;
+      animation:neonPulse 2.5s infinite ease-in-out,
+                floatName 4s infinite ease-in-out;
+    }
+
+    @keyframes neonPulse{
+      0%,100%{
+        text-shadow:0 0 10px #00ffcc,0 0 20px #00ffcc;
+      }
+      50%{
+        text-shadow:0 0 30px #00ffcc,0 0 60px #00ffcc;
+      }
+    }
+
+    @keyframes floatName{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+      100%{transform:translateY(0)}
+    }
+
+    @keyframes floatImg{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-20px)}
+      100%{transform:translateY(0)}
+    }
+
+    p{
+      max-width:750px;
+      margin:auto;
+      color:#ccc;
+      line-height:1.6;
+      font-size:18px;
+    }
+
+    /* ===== BUTTON ===== */
+    .btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:14px 36px;
+      background:#00ffcc;
+      color:#000;
+      font-weight:bold;
+      border-radius:8px;
+      text-decoration:none;
+      transition:.3s;
+    }
+    .btn:hover{
+      transform:scale(1.08);
+    }
+
+    /* ===== SECTIONS ===== */
+    section{
+      padding:90px 20px;
+      text-align:center;
+    }
+
+    /* ===== CARD ===== */
+    .card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(0,255,204,.25);
+      border-radius:18px;
+      padding:35px;
+      backdrop-filter:blur(14px);
+      box-shadow:0 0 25px rgba(0,255,204,.25);
+      transition:.4s;
+      margin-bottom:30px;
+    }
+    .card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 0 45px rgba(0,255,204,.6);
+    }
+
+    h2{
+      color:#00ffcc;
+      margin-bottom:15px;
+    }
+
+    /* ===== GRID ===== */
+    .row-2{
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+
+    /* ===== LIST ===== */
+    ul{
+      list-style:none;
+      color:#ddd;
+      line-height:1.9;
+    }
+    ul li::before{
+      content:"✔ ";
+      color:#00ffcc;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      padding:20px;
+      background:#000;
+      color:#aaa;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      object-fit: contain; /* Ensures full image visibility */
+      box-shadow: 0 0 15px rgba(0,255,204,.25);
+      transition: transform 0.3s;
+      display: none; /* Initially hide images */
+    }
+
+    .gallery-item.show {
+      display: block; /* Show images after password is entered */
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    @media(max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        gap: 15px;
+      }
+
+      .naruto {
+        width: 180px;
+      }
+
+      .name-animate {
+        font-size: 28px;
+      }
+
+      .row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        padding: 10px 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      nav a {
+        font-size: 14px;
+        margin: 0 10px;
+      }
+    }
+
+    /* Larger screens */
+    @media(min-width: 1024px) {
+      .hero {
+        gap: 30px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#work">Work</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ===== HOME ===== -->
+<section id="home">
+  <div class="hero">
+    <img src="naruto_sticker.png" class="naruto">
+    <div class="name-animate">ADARSH JAISWAL</div>
+  </div>
+  <p>Anime-inspired portfolio with modern neon visuals.</p>
+  <a href="#about" class="btn">Explore</a>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="row-2">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>
+        My name is Adarsh, and I am currently a Class 9 student with a strong interest in website development.
+        I enjoy designing and building modern, interactive websites that combine clean structure with creative visuals.
+        I am continuously learning new web technologies and improving my skills through practice and personal projects.
+        My goal is to grow as a developer and create websites that are both visually appealing and user-friendly.
+      </p>
+    </div>
+
+    <div class="card" id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS Animations</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Responsive Design</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORK ===== -->
+<section id="work">
+  <div class="row-2">
+    <div class="card">
+      <h2>My Work</h2>
+      <p>
+        I create clean and modern websites with a focus on design, animation, and user experience.
+        My projects include anime-inspired landing pages, personal portfolios, and creative UI experiments.
+        As a Class 9 student, I use personal projects to practice and improve my development skills.
+      </p>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contact</h2>
+      <a class="btn" href="https://www.instagram.com/x__adyo/" target="_blank">Instagram</a>
+      <a class="btn" href="https://github.com/ADARSHYO-dev" target="_blank" style="margin-left:10px">GitHub</a>
+      <br><br>
+      <a class="btn" href="mailto:adarshx......@hotmail.com">Email Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PERSONAL GALLERY ===== -->
+<section id="personal-gallery">
+  <div class="card">
+    <h2>Personal Gallery</h2>
+    <div class="gallery" id="personal-gallery-images">
+      <img src="personal_1.jpg" alt="Personal 1" class="gallery-item">
+      <img src="personal_2.jpg" alt="Personal 2" class="gallery-item">
+      <img src="personal_3.jpg" alt="Personal 3" class="gallery-item">
+      <img src="personal_4.jpg" alt="Personal 4" class="gallery-item">
+      <img src="personal_5.jpg" alt="Personal 5" class="gallery-item">
+      <img src="personal_6.jpg" alt="Personal 6" class="gallery-item">
+      <img src="personal_7.jpg" alt="Personal 7" class="gallery-item">
+      <img src="personal_8.jpg" alt="Personal 8" class="gallery-item">
+      <img src="personal_9.jpg" alt="Personal 9" class="gallery-item">
+      <img src="personal_10.jpg" alt="Personal 10" class="gallery-item">
+    </div>
+    <button class="btn" onclick="openPersonalGallery()">Unlock Personal Gallery</button>
+  </div>
+</section>
+
+<!-- ===== PRIVATE GALLERY ===== -->
+<section id="private-gallery">
+  <div class="card">
+    <h2>Private Gallery</h2>
+    <div class="gallery" id="private-gallery-images">
+      <img src="private_1.jpg" alt="Private 1" class="gallery-item">
+      <img src="private_2.jpg" alt="Private 2" class="gallery-item">
+      <img src="private_3.jpg" alt="Private 3" class="gallery-item">
+      <img src="private_4.jpg" alt="Private 4" class="gallery-item">
+      <img src="private_5.jpg" alt="Private 5" class="gallery-item">
+      <img src="private_6.jpg" alt="Private 6" class="gallery-item">
+      <img src="private_7.jpg" alt="Private 7" class="gallery-item">
+      <img src="private_8.jpg" alt="Private 8" class="gallery-item">
+      <img src="private_9.jpg" alt="Private 9" class="gallery-item">
+      <img src="private_10.jpg" alt="Private 10" class="gallery-item">
+    </div>
+    <button class="btn" onclick="openPrivateGallery()">Unlock Private Gallery</button>
+  </div>
+</section>
+
+<footer>© 2025 Adarsh Jaiswal</footer>
+
+<script>
+  function openPersonalGallery() {
+    const password = prompt("Enter the password for Personal Gallery:");
+    if(password === "@adarshxadyo"){
+      document.querySelectorAll('#personal-gallery-images .gallery-item').forEach(item => {
+        item.classList.add('show');
+      });
+    } else {
+      alert("Incorrect password!");
+    }
+  }
+
+  function openPrivateGallery() {
+    const password = prompt("Enter the password for Private Gallery:");
+    if(password === "99850"){
+      document.querySelectorAll('#private-gallery-images .gallery-item').forEach(item => {
+        item.classList.add('show');
+      });
+    } else {
+      alert("Incorrect password!");
+    }
+  }
+</script>
+
+</body>
+</html>
+
