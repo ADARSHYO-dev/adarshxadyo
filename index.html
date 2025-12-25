@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adarsh Jaiswal — Web Developer | Anime-inspired UI</title>
+  <meta name="description" content="Adarsh Jaiswal — Student web developer. Modern, responsive and anime-inspired portfolio with animation, projects and contact." />
+  <meta name="author" content="Adarsh Jaiswal" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Adarsh Jaiswal — Web Developer" />
+  <meta property="og:description" content="Anime-inspired portfolio — UI/UX, animations, responsive web development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Structured data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adarsh Jaiswal",
+    "url": "https://your-site.example/",
+    "sameAs": [
+      "https://www.instagram.com/x__adyo/"
+    ],
+    "jobTitle": "Student Web Developer"
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Home — Adarsh Jaiswal">ADARSH JAISWAL</a>
+      <button id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle menu">☰</button>
+      <ul id="navMenu" class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+      <div class="hero-inner">
+        <img src="assets/profile.png" alt="Adarsh Jaiswal" class="hero-avatar" loading="lazy">
+        <div class="hero-text">
+          <h1 class="neon">Adarsh Jaiswal</h1>
+          <p class="lead">Student Web Developer • HTML • CSS • JavaScript • Python</p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#work">See Projects</a>
+            <a class="btn outline" href="assets/Adarsh_Jaiswal_Resume.pdf" download>Download Resume</a>
+          </div>
+          <p class="micro">Based in India · Class 9 · Continuously learning & building</p>
+          <div class="social">
+            <a href="https://www.instagram.com/x__adyo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">@x__adyo</a>
+            <a href="mailto:adarshx......@hotmail.com" aria-label="Email">Email</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <div class="card split">
+        <div>
+          <h2>About Me</h2>
+          <p>Hello — I'm Adarsh, a Class 9 student passionate about building modern, interactive websites. I enjoy clean structure, animations, and creative visuals inspired by anime. I practice by building personal projects, learning new tools, and improving UX skills every day.</p>
+          <ul class="highlights">
+            <li>Strong fundamentals in HTML, CSS and JavaScript</li>
+            <li>Animation, responsive design and accessibility</li>
+            <li>Python for learning problem-solving and automation</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Quick Info</h3>
+          <table class="info-table" aria-hidden="false">
+            <tr><th>Location</th><td>India</td></tr>
+            <tr><th>Education</th><td>Class 9</td></tr>
+            <tr><th>Availability</th><td>Open to collaboration & learning projects</td></tr>
+          </table>
+          <div class="mini-ctas">
+            <a class="btn" href="#contact">Contact</a>
+            <a class="btn" href="assets/Adarsh_Jaiswal_Resume.pdf" download>Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <p class="sub">Languages, tools and technologies I use</p>
+      <div class="skills-grid">
+        <div class="skill">
+          <label>HTML & CSS</label>
+          <div class="progress" data-value="92"><span class="bar"></span></div>
+        </div>
+        <div class="skill">
+          <label>JavaScript</label>
+          <div class="progress" data-value="82"><span class="bar"></span></div>
+        </div>
+        <div class="skill">
+          <label>Responsive Design</label>
+          <div class="progress" data-value="88"><span class="bar"></span></div>
+        </div>
+        <div class="skill">
+          <label>CSS Animations</label>
+          <div class="progress" data-value="86"><span class="bar"></span></div>
+        </div>
+        <div class="skill">
+          <label>Python</label>
+          <div class="progress" data-value="70"><span class="bar"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS / WORK -->
+    <section id="work" class="section container">
+      <h2>Projects</h2>
+      <p class="sub">A selection of personal experiments & portfolio pieces</p>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Replace image src with your project images (thumbnails) -->
+        <article class="project-card">
+          <img data-src="assets/project-01.png" alt="Anime Landing Page" class="project-thumb lazy" />
+          <div class="project-body">
+            <h3>Anime Landing Page</h3>
+            <p>Neon-style responsive landing page with animated hero and particle background.</p>
+            <div class="project-actions">
+              <button class="btn small" data-open="modal" data-src="assets/project-01-large.png" data-title="Anime Landing Page">Preview</button>
+              <a class="btn small outline" href="#" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img data-src="assets/project-02.png" alt="Portfolio v2" class="project-thumb lazy" />
+          <div class="project-body">
+            <h3>Portfolio v2</h3>
+            <p>Clean portfolio template with accessible markup and light/dark theme options.</p>
+            <div class="project-actions">
+              <button class="btn small" data-open="modal" data-src="assets/project-02-large.png" data-title="Portfolio v2">Preview</button>
+              <a class="btn small outline" href="#" rel="noopener">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- TODO: add more project cards as needed -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+      <h2>Contact</h2>
+      <p class="sub">Want to collaborate? Send a message.</p>
+
+      <div class="contact-grid card">
+        <form id="contactForm" class="contact-form" action="mailto:adarshx......@hotmail.com" method="post" enctype="text/plain" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Your name">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="email@example.com">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Describe your project or question"></textarea>
+
+          <div class="form-row">
+            <button class="btn primary" type="submit">Send Message</button>
+            <button class="btn" type="reset">Reset</button>
+          </div>
+          <p class="muted">Tip: The form opens your mail client by default. To use a hosted form, wire it to a service like Formspree or a server endpoint.</p>
+        </form>
+
+        <div class="contact-info">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:adarshx......@hotmail.com">adarshx......@hotmail.com</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/x__adyo/" target="_blank" rel="noopener">@x__adyo</a></p>
+          <p>Resume: <a href="assets/Adarsh_Jaiswal_Resume.pdf" download>Download PDF</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Adarsh Jaiswal • Built with ❤️ • <a href="#home">Back to top</a></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+    <div class="lightbox-inner" role="document">
+      <button class="lightbox-close" aria-label="Close">✕</button>
+      <img id="lightboxImage" src="" alt="">
+      <h4 id="lightboxTitle"></h4>
+    </div>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
